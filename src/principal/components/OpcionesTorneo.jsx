@@ -19,7 +19,11 @@ export const OpcionesTorneo = () => {
                 </Link>
                 </div>
                 <div className='col-6 text-center d-grid gap-2'>
-                    <button type="button" className="btn btn-primary btn-lg">Iniciar Sesión</button>
+                    <Link 
+                        to="login"
+                    >                    
+                        <button type="button" className="btn btn-primary btn-lg">Iniciar Sesión</button>
+                    </Link>
                 </div>
 
             </div>

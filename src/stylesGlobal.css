@@ -1,0 +1,35 @@
+.containerCardEntrenador{
+    display:flex;
+    justify-content: space-between;
+    align-items:baseline;
+    width: 100%;
+}
+
+.cantidadEntrenadores{
+    margin: 0px;
+    font-size: 50px;
+    font-weight: 700;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.iconCardAdmin {
+    margin: 0px;
+    font-size: 40px;
+    opacity: .3;    
+}
+
+.pokemonImageDetail {
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+}
+
+.cursor{
+    cursor: pointer;
+}
+
+.imgPokemonCard{
+    width: 30%;
+    height: 100%;
+}

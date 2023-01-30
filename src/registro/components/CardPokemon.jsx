@@ -12,14 +12,16 @@ export const CardPokemon = ({url, integrantes, setIntegrantes, setIscomplete}) =
     
     const estado = useFechtApiPokemon(url)
     const { cargando, data } = estado
+    
 
     const {dataregistro} = useContext( RegistroContext )
     const { pokemones } = dataregistro
 
-    const onNewIntegrant = ( { id, name} ) => {
-        
+    // const onNewIntegrant = ( { id, name} ) => {
+    const onNewIntegrant = ( pokemon ) => {
+ 
         const item = integrantes.find(isExist)
-        console.log(item)
+        // console.log(item)
         
         if( item !== undefined ){
             setIscomplete({flag: true, message:'El Pokemon seleccionado ya existe!!!'})
@@ -29,8 +31,12 @@ export const CardPokemon = ({url, integrantes, setIntegrantes, setIscomplete}) =
         
         if ( integrantes.length < 6 ){
             const newIntegrante = {
-                id,
-                name,
+                id: pokemon.id,
+                name: pokemon.name,
+                type: pokemon.types[0].type.name,
+                hp: pokemon.stats[0].base_stat,
+                attack: pokemon.stats[1].base_stat,
+                defense: pokemon.stats[2].base_stat,
                 done: false,
             }
 
@@ -38,8 +44,12 @@ export const CardPokemon = ({url, integrantes, setIntegrantes, setIscomplete}) =
             setIscomplete({flag: false, message:''})
     
             pokemones.push({
-                id,
-                name,
+                id: pokemon.id,
+                name: pokemon.name,
+                type: pokemon.types[0].type.name,
+                hp: pokemon.stats[0].base_stat,
+                attack: pokemon.stats[1].base_stat,
+                defense: pokemon.stats[2].base_stat,
                 done: false,
             })
         }else{

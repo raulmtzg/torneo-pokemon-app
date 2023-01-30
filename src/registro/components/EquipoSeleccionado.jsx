@@ -12,19 +12,14 @@ export const EquipoSeleccionado = ( {integrantes, onDeleteIntegrante} ) => {
 
   const inscribirEntrenador = async() => {
     const entrenador = JSON.parse(localStorage.getItem('data'))    
-    const pokemones = JSON.parse(localStorage.getItem('pokemones'))  
+    const pokemones = JSON.parse(localStorage.getItem('pokemones'))
     
     const post = {
       nombre: entrenador.nombre,
       apellidos: entrenador.apellidos,
       correo: entrenador.correo,
       fecha_nacimiento: entrenador.fechanacimiento,
-      id_pokemon1: pokemones[0].id,
-      id_pokemon2: pokemones[1].id,
-      id_pokemon3: pokemones[2].id,
-      id_pokemon4: pokemones[3].id,
-      id_pokemon5: pokemones[4].id,
-      id_pokemon6: pokemones[5].id,
+      pokemones
 
     }
 
@@ -41,9 +36,8 @@ export const EquipoSeleccionado = ( {integrantes, onDeleteIntegrante} ) => {
 
     const response = await fetch('http://localhost:8000/api/competidores/', requestOptions);
     const result = await response.json();
-
+    
     setEnviado(true);
-    console.log(result)
     
     if( result.status){
       const text = result.message;
