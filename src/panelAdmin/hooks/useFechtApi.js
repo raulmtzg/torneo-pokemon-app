@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react"
 
 
-export const useFechtEntrenadores = (url, token) => {
+export const useFechtApi = (url, token) => {
+    
+    if(url == ''){
+        return;
+    } 
 
     const [resultado, setResultado] = useState({cargando:true, data:null})
 

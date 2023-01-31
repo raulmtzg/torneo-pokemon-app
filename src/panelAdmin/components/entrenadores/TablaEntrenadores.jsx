@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { UsuarioContext } from "../../context/UsuarioContext";
-import { useFechtEntrenadores } from "../../hooks/useFechtEntrenadores";
+import { useFechtApi } from "../../hooks/useFechtApi";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
 import { Icon } from "../../../components/Icon";
 import { EntrenadorRow } from "./EntrenadorRow";
@@ -12,7 +12,7 @@ export const TablaEntrenadores = ({ onShowModal }) => {
     const { datosUsuario } = useContext( UsuarioContext );
 
     const [url, setUrl] = useState('http://localhost:8000/api/competidores');
-    const estado = useFechtEntrenadores(url, datosUsuario.accessToken);
+    const estado = useFechtApi(url, datosUsuario.accessToken);
     const {cargando, data} = estado;
 
     const onNextPage = (url) => {

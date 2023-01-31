@@ -1,4 +1,5 @@
-import { CardEstadistica } from "./CardEstadistica"
+import { CardTopHp } from "./CardTopHp"
+import { CardTopPokemon } from "./CardTopPokemon"
 
 
 export const CardsEstadistica = () => {
@@ -6,8 +7,9 @@ export const CardsEstadistica = () => {
     <>
         <div className="row">
 
-            <CardEstadistica titleCard='Pokémones más utilizados' colorCard='success'/>
-            <CardEstadistica titleCard='5 Pokémones con más HP' colorCard='primary'/>
+            <CardTopPokemon />
+            <CardTopHp />
+            {/* <CardEstadistica titleCard='5 Pokémones con más HP' colorCard='primary'/> */}
 
         </div>
     </>

@@ -1,16 +1,30 @@
-import { useContext } from 'react';
+import { useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { Link, NavLink, redirect } from 'react-router-dom';
 import { UsuarioContext } from '../context/UsuarioContext';
+import { useFechtApi } from '../hooks/useFechtApi';
 
 
 export const Navbar = () => {
 
     const { datosUsuario } = useContext( UsuarioContext );
+    // const [url, setUrl] = useState('');
+    // const estado = useFechtApi(url, datosUsuario.accessToken);
+    // console.log(estado)
+    
     
     const handleLogout = () => {
         datosUsuario.isLogged = false;
         localStorage.removeItem('credentialUser');
+        
+        setUrl(url);
+
     }
+
+    // useEffect(() => {
+    //   handleLogout(url)
+    // }, [url])
+    
 
 
     return (
